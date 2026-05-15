@@ -7,6 +7,7 @@ Complete instructions for deploying to multiple platforms.
 ## Prerequisites
 
 Before deploying, ensure:
+
 1. `npm install` works locally
 2. `npm start` runs without errors
 3. Admin credentials are changed in `backend/data/settings.json`
@@ -21,6 +22,7 @@ Railway is the easiest deployment option with automatic SSL.
 ### Steps
 
 1. **Create GitHub Repository**
+
 ```bash
 git init
 git add .
@@ -36,6 +38,7 @@ git push -u origin main
    - Railway auto-detects Node.js
 
 3. **Set Environment Variables** (Railway Dashboard → Variables)
+
 ```
 PORT=3000
 NODE_ENV=production
@@ -67,6 +70,7 @@ NODE_ENV=production
 
 **Persistent Storage (Important for Render):**
 Render's free tier has ephemeral storage. Use Render Disk:
+
 - Dashboard → Your Service → Disks → Add Disk
 - Mount Path: `/data`
 - Update `backend/data/` paths to `/data/vehicles.json` etc.
@@ -78,11 +82,13 @@ Render's free tier has ephemeral storage. Use Render Disk:
 For full control and production-grade deployment.
 
 ### 1. Create Droplet
+
 - Ubuntu 22.04 LTS
 - 2GB RAM minimum recommended
 - Lagos or London region (lowest latency)
 
 ### 2. Initial Server Setup
+
 ```bash
 # SSH into server
 ssh root@YOUR_SERVER_IP
@@ -105,6 +111,7 @@ apt install -y certbot python3-certbot-nginx
 ```
 
 ### 3. Deploy Application
+
 ```bash
 # Create app directory
 mkdir -p /var/www/still-autos
@@ -127,6 +134,7 @@ pm2 startup  # Auto-restart on reboot
 ```
 
 ### 4. Configure Nginx
+
 ```bash
 nano /etc/nginx/sites-available/stillautos.ng
 ```
@@ -172,12 +180,14 @@ systemctl restart nginx
 ```
 
 ### 5. SSL Certificate
+
 ```bash
 certbot --nginx -d stillautos.ng -d www.stillautos.ng
 # Follow prompts — auto-renews every 90 days
 ```
 
 ### 6. Firewall
+
 ```bash
 ufw allow 22   # SSH
 ufw allow 80   # HTTP
@@ -186,6 +196,7 @@ ufw enable
 ```
 
 ### 7. Database Backups
+
 ```bash
 # Create backup script
 nano /root/backup-stillautos.sh
@@ -222,6 +233,7 @@ crontab -e
 ## GitHub Workflow
 
 ### Branching Strategy
+
 ```
 main          ← Production (auto-deploys)
 develop       ← Development integration
@@ -230,7 +242,9 @@ hotfix/*      ← Emergency fixes
 ```
 
 ### Deploy on Push to Main
+
 Create `.github/workflows/deploy.yml`:
+
 ```yaml
 name: Deploy to Production
 
@@ -243,7 +257,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
@@ -267,25 +281,28 @@ Add secrets in GitHub: Settings → Secrets → `SERVER_IP`, `SSH_PRIVATE_KEY`
 For production, use environment variables instead of hardcoded values:
 
 Create `.env`:
+
 ```env
 PORT=3000
 NODE_ENV=production
 ADMIN_USERNAME=your-admin-username
 ADMIN_PASSWORD=your-secure-password
 ADMIN_TOKEN_SECRET=your-64-char-random-string
-WHATSAPP_NUMBER=2348012345678
+WHATSAPP_NUMBER=2347025007590
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
 ```
 
 Install dotenv:
+
 ```bash
 npm install dotenv
 ```
 
 Add to `backend/server.js` top:
+
 ```javascript
-require('dotenv').config();
+require("dotenv").config();
 ```
 
 ---
@@ -322,6 +339,7 @@ DNS propagation: 24–48 hours
 ## Monitoring
 
 ### PM2 Commands
+
 ```bash
 pm2 status              # Check app status
 pm2 logs still-autos    # View logs
@@ -331,6 +349,7 @@ pm2 monit               # Real-time monitoring
 ```
 
 ### Nginx Logs
+
 ```bash
 tail -f /var/log/nginx/access.log
 tail -f /var/log/nginx/error.log
@@ -338,4 +357,4 @@ tail -f /var/log/nginx/error.log
 
 ---
 
-*For support, contact your development team or open a GitHub issue.*
+_For support, contact your development team or open a GitHub issue._

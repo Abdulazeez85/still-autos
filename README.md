@@ -26,6 +26,7 @@
 Still Autos is a **production-grade** luxury automotive dealership platform designed for the Nigerian market. The UI draws inspiration from Dubai's elite dealerships and premium UK automotive brands — cinematic, minimal, and conversion-focused.
 
 **Default Admin Credentials:**
+
 - Username: `admin`
 - Password: `stillautos2024`
 
@@ -35,14 +36,14 @@ Still Autos is a **production-grade** luxury automotive dealership platform desi
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | HTML5, CSS3, Vanilla JS (ES6+) |
-| Backend | Node.js + Express.js |
-| Database | JSON File-based (no dependencies) |
-| Fonts | Cormorant Garamond + Outfit (Google Fonts) |
-| Images | Unsplash CDN (replaceable) |
-| File Upload | Multer |
+| Layer       | Technology                                 |
+| ----------- | ------------------------------------------ |
+| Frontend    | HTML5, CSS3, Vanilla JS (ES6+)             |
+| Backend     | Node.js + Express.js                       |
+| Database    | JSON File-based (no dependencies)          |
+| Fonts       | Cormorant Garamond + Outfit (Google Fonts) |
+| Images      | Unsplash CDN (replaceable)                 |
+| File Upload | Multer                                     |
 
 ---
 
@@ -103,6 +104,7 @@ still-autos/
 ## Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ (`node --version`)
 - npm 9+
 
@@ -196,6 +198,7 @@ Create `.vscode/launch.json`:
 ## Features
 
 ### 🎨 Frontend
+
 - **Cinematic Homepage** — parallax hero, animated stats, featured vehicles
 - **Inventory Grid** — advanced filtering by make, body, condition, price, location
 - **Vehicle Detail Pages (VDP)** — multi-image gallery, lightbox, spec cards, features
@@ -206,6 +209,7 @@ Create `.vscode/launch.json`:
 - **Luxury Animations** — GSAP-ready, smooth transitions, scroll reveal
 
 ### 🌗 Dual Theme System
+
 - Dark Mode: Cinematic matte black + gold accents
 - Light Mode: Editorial cream + refined gold
 - Smooth animated transitions
@@ -213,6 +217,7 @@ Create `.vscode/launch.json`:
 - System preference detection
 
 ### ⚙️ Backend
+
 - RESTful API with Express.js
 - JSON file-based storage (no database setup required)
 - Vehicle CRUD operations
@@ -223,6 +228,7 @@ Create `.vscode/launch.json`:
 - Simple token authentication
 
 ### 🔧 Admin Dashboard
+
 - Login screen with authentication
 - Stats dashboard (views, inventory value, inquiries)
 - Full vehicle management (add, edit, delete, toggle availability)
@@ -256,33 +262,33 @@ Change credentials in `backend/data/settings.json`:
 
 ### Vehicles
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/vehicles` | Get all vehicles (with filters) |
-| GET | `/api/vehicles/:id` | Get single vehicle |
-| GET | `/api/vehicles/:id/related` | Get related vehicles |
+| Method | Endpoint                    | Description                     |
+| ------ | --------------------------- | ------------------------------- |
+| GET    | `/api/vehicles`             | Get all vehicles (with filters) |
+| GET    | `/api/vehicles/:id`         | Get single vehicle              |
+| GET    | `/api/vehicles/:id/related` | Get related vehicles            |
 
 **Query Params:** `make`, `body`, `condition`, `fuel`, `location`, `featured`, `min_price`, `max_price`, `search`, `sort`
 
 ### Admin (requires `x-admin-token` header)
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/admin/login` | Authenticate |
-| GET | `/api/admin/stats` | Dashboard stats |
-| GET | `/api/admin/vehicles` | All vehicles |
-| POST | `/api/admin/vehicles` | Create vehicle |
-| PUT | `/api/admin/vehicles/:id` | Update vehicle |
-| DELETE | `/api/admin/vehicles/:id` | Delete vehicle |
-| GET | `/api/admin/inquiries` | All inquiries |
+| Method | Endpoint                  | Description     |
+| ------ | ------------------------- | --------------- |
+| POST   | `/api/admin/login`        | Authenticate    |
+| GET    | `/api/admin/stats`        | Dashboard stats |
+| GET    | `/api/admin/vehicles`     | All vehicles    |
+| POST   | `/api/admin/vehicles`     | Create vehicle  |
+| PUT    | `/api/admin/vehicles/:id` | Update vehicle  |
+| DELETE | `/api/admin/vehicles/:id` | Delete vehicle  |
+| GET    | `/api/admin/inquiries`    | All inquiries   |
 
 ### Other
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/inquiries` | Submit inquiry |
-| POST | `/api/finance/calculate` | Calculate loan |
-| POST | `/api/upload/images` | Upload images |
+| Method | Endpoint                 | Description    |
+| ------ | ------------------------ | -------------- |
+| POST   | `/api/inquiries`         | Submit inquiry |
+| POST   | `/api/finance/calculate` | Calculate loan |
+| POST   | `/api/upload/images`     | Upload images  |
 
 ---
 
@@ -292,11 +298,11 @@ The dual theme is controlled by `data-theme` attribute on `<html>`:
 
 ```javascript
 // Switch theme
-document.documentElement.setAttribute('data-theme', 'light'); // or 'dark'
+document.documentElement.setAttribute("data-theme", "light"); // or 'dark'
 
 // Via built-in manager
 SA.ThemeManager.toggle();
-SA.ThemeManager.set('dark');
+SA.ThemeManager.set("dark");
 SA.ThemeManager.get(); // returns 'dark' or 'light'
 ```
 
@@ -311,18 +317,19 @@ Each vehicle page generates a pre-filled WhatsApp message:
 ```javascript
 // Built-in helper
 SA.WhatsApp.openVehicle(vehicle);
-SA.WhatsApp.openGeneral('Custom message');
+SA.WhatsApp.openGeneral("Custom message");
 
 // Custom usage
 const msg = `Hi Still Autos, I'm interested in the ${year} ${make} ${model}`;
-const url = `https://wa.me/2348012345678?text=${encodeURIComponent(msg)}`;
-window.open(url, '_blank');
+const url = `https://wa.me/2347025007590?text=${encodeURIComponent(msg)}`;
+window.open(url, "_blank");
 ```
 
 Update the WhatsApp number in `frontend/js/app.js`:
+
 ```javascript
 const CONFIG = {
-  WHATSAPP_NUMBER: '2348012345678', // Change this
+  WHATSAPP_NUMBER: '2347025007590', // Change this
   ...
 };
 ```
@@ -334,12 +341,13 @@ const CONFIG = {
 ### Change Dealership Info
 
 Edit `backend/data/settings.json`:
+
 ```json
 {
   "dealership": {
     "name": "Still Autos",
-    "phone": "+234 801 234 5678",
-    "whatsapp": "+2348012345678",
+    "phone": "+234 702 500 7590",
+    "whatsapp": "+2347025007590",
     "address": "5 Bourdillon Road, Ikoyi, Lagos"
   }
 }
@@ -348,13 +356,14 @@ Edit `backend/data/settings.json`:
 ### Change Brand Colours
 
 Edit `frontend/css/variables.css`:
+
 ```css
 [data-theme="dark"] {
-  --accent: #c9a84c;        /* Gold accent */
-  --accent-light: #e4c97a;  /* Lighter gold */
+  --accent: #c9a84c; /* Gold accent */
+  --accent-light: #e4c97a; /* Lighter gold */
 }
 [data-theme="light"] {
-  --accent: #9a6f2e;        /* Darker gold for light bg */
+  --accent: #9a6f2e; /* Darker gold for light bg */
 }
 ```
 
@@ -369,6 +378,7 @@ Via Admin Dashboard **or** directly in `backend/data/vehicles.json`.
 See `DEPLOYMENT.md` for full instructions.
 
 **Quick deploy on Railway:**
+
 1. Push to GitHub
 2. Connect Railway to your repo
 3. Set `PORT=3000`
@@ -382,4 +392,4 @@ MIT © 2025 Still Autos Nigeria Ltd.
 
 ---
 
-*Built with precision for Nigeria's luxury market.*
+_Built with precision for Nigeria's luxury market._

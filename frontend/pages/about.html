@@ -1,142 +1,506 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About — Still Autos Nigeria</title>
-  <meta name="description" content="About Still Autos — Nigeria's premier luxury automotive dealership, based in Ikoyi, Lagos."/>
-  <link rel="stylesheet" href="/css/variables.css"/>
-  <link rel="stylesheet" href="/css/navbar.css"/>
-  <style>
-    .about-page { padding-top: var(--nav-height); }
-    .about-hero { min-height: 60vh; display: flex; align-items: center; background: var(--bg-secondary); position: relative; overflow: hidden; padding: var(--space-5xl) 0; border-bottom: 1px solid var(--border); }
-    .about-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, var(--accent-glow) 0%, transparent 60%); }
-    .about-hero-img { position: absolute; right: 0; top: 0; bottom: 0; width: 50%; object-fit: cover; opacity: 0.12; }
-    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: center; }
-    .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
-    .value-card { padding: var(--space-xl); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); }
-    .value-icon { font-size: 1.5rem; margin-bottom: var(--space-md); }
-    .value-title { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: var(--space-sm); }
-    .value-text { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
-    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
-    .team-card { text-align: center; }
-    .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-subtle); border: 2px solid var(--border-accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 2rem; color: var(--accent); margin: 0 auto var(--space-md); }
-    .team-name { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 4px; }
-    .team-role { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-    @media (max-width: 768px) { .about-inner, .values-grid, .team-grid { grid-template-columns: 1fr; } .about-hero-img { display: none; } }
-  </style>
-</head>
-<body>
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><span class="nav-logo-text">Still Autos</span><span class="nav-logo-sub">Lagos · Nigeria</span></a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li><li><a href="/inventory">Inventory</a></li>
-      <li><a href="/finance">Finance</a></li><li><a href="/about" class="active">About</a></li><li><a href="/contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="theme-toggle"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      <a href="https://wa.me/2347025007590" target="_blank" class="btn btn-whatsapp nav-cta btn-sm">WhatsApp</a>
-      <button class="nav-hamburger"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-<div class="nav-mobile">
-  <ul class="nav-mobile-links"><li><a href="/">Home</a></li><li><a href="/inventory">Inventory</a></li><li><a href="/finance">Finance</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul>
-  <div class="nav-mobile-footer"><a href="https://wa.me/2347025007590" class="btn btn-whatsapp btn-full">WhatsApp</a><button class="theme-toggle" style="align-self:center"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div>
-</div>
-
-<main class="about-page">
-  <!-- Hero -->
-  <section class="about-hero">
-    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80" class="about-hero-img" alt=""/>
-    <div class="container" style="position:relative;z-index:1">
-      <div class="section-label">Our Story</div>
-      <h1 class="section-title" style="max-width:560px">Where Luxury Meets<br/><em>Nigerian Ambition</em></h1>
-      <p class="section-subtitle" style="margin-bottom:var(--space-2xl)">
-        Still Autos was founded on a singular conviction: that Nigerian connoisseurs deserve access to the world's finest automobiles — without compromise, without the friction of international procurement, and without settling for less.
-      </p>
-      <div style="display:flex;gap:var(--space-2xl)">
-        <div><div style="font-family:var(--font-serif);font-size:2.5rem;color:var(--accent)">5+</div><div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)">Years of Excellence</div></div>
-        <div><div style="font-family:var(--font-serif);font-size:2.5rem;color:var(--accent)">500+</div><div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)">Happy Clients</div></div>
-        <div><div style="font-family:var(--font-serif);font-size:2.5rem;color:var(--accent)">₦50B+</div><div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)">Vehicles Sold</div></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Still Autos Nigeria</title>
+    <meta
+      name="description"
+      content="About Still Autos — Nigeria's premier luxury automotive dealership, based in Ikoyi, Lagos."
+    />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <style>
+      .about-page {
+        padding-top: var(--nav-height);
+      }
+      .about-hero {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        background: var(--bg-secondary);
+        position: relative;
+        overflow: hidden;
+        padding: var(--space-5xl) 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 60% 50%,
+          var(--accent-glow) 0%,
+          transparent 60%
+        );
+      }
+      .about-hero-img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        object-fit: cover;
+        opacity: 0.12;
+      }
+      .about-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4xl);
+        align-items: center;
+      }
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+      }
+      .value-card {
+        padding: var(--space-xl);
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+      }
+      .value-icon {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-md);
+      }
+      .value-title {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        margin-bottom: var(--space-sm);
+      }
+      .value-text {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+      }
+      .team-card {
+        text-align: center;
+      }
+      .team-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--accent-subtle);
+        border: 2px solid var(--border-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-serif);
+        font-size: 2rem;
+        color: var(--accent);
+        margin: 0 auto var(--space-md);
+      }
+      .team-name {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+      .team-role {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      @media (max-width: 768px) {
+        .about-inner,
+        .values-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-hero-img {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="nav-logo-text">Still Autos</span
+          ><span class="nav-logo-sub">Lagos · Nigeria</span></a
+        >
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/inventory">Inventory</a></li>
+          <li><a href="/finance">Finance</a></li>
+          <li><a href="/about" class="active">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle">
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" /></svg
+            ><svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <a
+            href="https://wa.me/2347025007590"
+            target="_blank"
+            class="btn btn-whatsapp nav-cta btn-sm"
+            >WhatsApp</a
+          >
+          <button class="nav-hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile">
+      <ul class="nav-mobile-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/inventory">Inventory</a></li>
+        <li><a href="/finance">Finance</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <div class="nav-mobile-footer">
+        <a href="https://wa.me/2347025007590" class="btn btn-whatsapp btn-full"
+          >WhatsApp</a
+        ><button class="theme-toggle" style="align-self: center">
+          <svg
+            class="icon-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="5" /></svg
+          ><svg
+            class="icon-moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
 
-  <!-- Mission -->
-  <section class="section" style="background:var(--bg-primary)">
-    <div class="container">
-      <div class="about-inner">
-        <div data-reveal>
-          <div class="section-label">Our Mission</div>
-          <h2 class="section-title">Curated. Authenticated.<br/><em>Delivered.</em></h2>
-          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg)">
-            We bridge the gap between global luxury automotive markets and Nigeria's growing class of discerning buyers. Every vehicle we source is verified for authenticity, inspected meticulously, and presented with full transparency.
+    <main class="about-page">
+      <!-- Hero -->
+      <section class="about-hero">
+        <img
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80"
+          class="about-hero-img"
+          alt=""
+        />
+        <div class="container" style="position: relative; z-index: 1">
+          <div class="section-label">Our Story</div>
+          <h1 class="section-title" style="max-width: 560px">
+            Where Luxury Meets<br /><em>Nigerian Ambition</em>
+          </h1>
+          <p class="section-subtitle" style="margin-bottom: var(--space-2xl)">
+            Still Autos was founded on a singular conviction: that Nigerian
+            connoisseurs deserve access to the world's finest automobiles —
+            without compromise, without the friction of international
+            procurement, and without settling for less.
           </p>
-          <p style="color:var(--text-secondary);line-height:1.8;">
-            From Rolls-Royce to Ferrari, from Bentley to Lamborghini — if it wears a prestigious badge, we know how to find the perfect example and deliver it to your doorstep in Nigeria.
-          </p>
-        </div>
-        <div data-reveal>
-          <div class="values-grid">
-            <div class="value-card"><div class="value-icon">🛡️</div><div class="value-title">Authenticity</div><div class="value-text">Every vehicle is verified through official channels with complete history documentation.</div></div>
-            <div class="value-card"><div class="value-icon">🤝</div><div class="value-title">Integrity</div><div class="value-text">Transparent pricing, honest assessments, and no hidden fees. Ever.</div></div>
-            <div class="value-card"><div class="value-icon">⭐</div><div class="value-title">Excellence</div><div class="value-text">From first enquiry to key handover, we operate at the highest standard of service.</div></div>
-            <div class="value-card"><div class="value-icon">🇳🇬</div><div class="value-title">Nigerian Pride</div><div class="value-text">Built for Nigeria's elite, by Nigerians who understand the market.</div></div>
+          <div style="display: flex; gap: var(--space-2xl)">
+            <div>
+              <div
+                style="
+                  font-family: var(--font-serif);
+                  font-size: 2.5rem;
+                  color: var(--accent);
+                "
+              >
+                5+
+              </div>
+              <div
+                style="
+                  font-size: 0.7rem;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: var(--text-muted);
+                "
+              >
+                Years of Excellence
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--font-serif);
+                  font-size: 2.5rem;
+                  color: var(--accent);
+                "
+              >
+                500+
+              </div>
+              <div
+                style="
+                  font-size: 0.7rem;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: var(--text-muted);
+                "
+              >
+                Happy Clients
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--font-serif);
+                  font-size: 2.5rem;
+                  color: var(--accent);
+                "
+              >
+                ₦50B+
+              </div>
+              <div
+                style="
+                  font-size: 0.7rem;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: var(--text-muted);
+                "
+              >
+                Vehicles Sold
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Team -->
-  <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border)">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:var(--space-3xl)">
-        <div class="section-label" style="justify-content:center">Our People</div>
-        <h2 class="section-title">The Team Behind Still Autos</h2>
-      </div>
-      <div class="team-grid">
-        <div class="team-card" data-reveal>
-          <div class="team-avatar">A</div>
-          <div class="team-name">Adebayo Okafor</div>
-          <div class="team-role">Founder & CEO</div>
-          <p style="font-size:0.85rem;color:var(--text-muted);margin-top:var(--space-sm);line-height:1.6">15 years in premium automotive retail. Former luxury brand consultant.</p>
+      <!-- Mission -->
+      <section class="section" style="background: var(--bg-primary)">
+        <div class="container">
+          <div class="about-inner">
+            <div data-reveal>
+              <div class="section-label">Our Mission</div>
+              <h2 class="section-title">
+                Curated. Authenticated.<br /><em>Delivered.</em>
+              </h2>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  line-height: 1.8;
+                  margin-bottom: var(--space-lg);
+                "
+              >
+                We bridge the gap between global luxury automotive markets and
+                Nigeria's growing class of discerning buyers. Every vehicle we
+                source is verified for authenticity, inspected meticulously, and
+                presented with full transparency.
+              </p>
+              <p style="color: var(--text-secondary); line-height: 1.8">
+                From Rolls-Royce to Ferrari, from Bentley to Lamborghini — if it
+                wears a prestigious badge, we know how to find the perfect
+                example and deliver it to your doorstep in Nigeria.
+              </p>
+            </div>
+            <div data-reveal>
+              <div class="values-grid">
+                <div class="value-card">
+                  <div class="value-icon">🛡️</div>
+                  <div class="value-title">Authenticity</div>
+                  <div class="value-text">
+                    Every vehicle is verified through official channels with
+                    complete history documentation.
+                  </div>
+                </div>
+                <div class="value-card">
+                  <div class="value-icon">🤝</div>
+                  <div class="value-title">Integrity</div>
+                  <div class="value-text">
+                    Transparent pricing, honest assessments, and no hidden fees.
+                    Ever.
+                  </div>
+                </div>
+                <div class="value-card">
+                  <div class="value-icon">⭐</div>
+                  <div class="value-title">Excellence</div>
+                  <div class="value-text">
+                    From first enquiry to key handover, we operate at the
+                    highest standard of service.
+                  </div>
+                </div>
+                <div class="value-card">
+                  <div class="value-icon">🇳🇬</div>
+                  <div class="value-title">Nigerian Pride</div>
+                  <div class="value-text">
+                    Built for Nigeria's elite, by Nigerians who understand the
+                    market.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="team-card" data-reveal>
-          <div class="team-avatar">C</div>
-          <div class="team-name">Chidinma Eze</div>
-          <div class="team-role">Head of Sales</div>
-          <p style="font-size:0.85rem;color:var(--text-muted);margin-top:var(--space-sm);line-height:1.6">Luxury automotive specialist with a passion for matching clients with their perfect vehicle.</p>
+      </section>
+
+      <!-- Team -->
+      <section
+        class="section"
+        style="
+          background: var(--bg-secondary);
+          border-top: 1px solid var(--border);
+        "
+      >
+        <div class="container">
+          <div style="text-align: center; margin-bottom: var(--space-3xl)">
+            <div class="section-label" style="justify-content: center">
+              Our People
+            </div>
+            <h2 class="section-title">The Team Behind Still Autos</h2>
+          </div>
+          <div class="team-grid">
+            <div class="team-card" data-reveal>
+              <div class="team-avatar">A</div>
+              <div class="team-name">Adebayo Okafor</div>
+              <div class="team-role">Founder & CEO</div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-muted);
+                  margin-top: var(--space-sm);
+                  line-height: 1.6;
+                "
+              >
+                15 years in premium automotive retail. Former luxury brand
+                consultant.
+              </p>
+            </div>
+            <div class="team-card" data-reveal>
+              <div class="team-avatar">C</div>
+              <div class="team-name">Chidinma Eze</div>
+              <div class="team-role">Head of Sales</div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-muted);
+                  margin-top: var(--space-sm);
+                  line-height: 1.6;
+                "
+              >
+                Luxury automotive specialist with a passion for matching clients
+                with their perfect vehicle.
+              </p>
+            </div>
+            <div class="team-card" data-reveal>
+              <div class="team-avatar">E</div>
+              <div class="team-name">Emmanuel Nwachukwu</div>
+              <div class="team-role">Finance Director</div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-muted);
+                  margin-top: var(--space-sm);
+                  line-height: 1.6;
+                "
+              >
+                Structures bespoke financing solutions across Nigeria's top
+                banking institutions.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="team-card" data-reveal>
-          <div class="team-avatar">E</div>
-          <div class="team-name">Emmanuel Nwachukwu</div>
-          <div class="team-role">Finance Director</div>
-          <p style="font-size:0.85rem;color:var(--text-muted);margin-top:var(--space-sm);line-height:1.6">Structures bespoke financing solutions across Nigeria's top banking institutions.</p>
+      </section>
+
+      <!-- CTA -->
+      <section
+        class="section"
+        style="
+          background: var(--bg-primary);
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+              ellipse at center,
+              var(--accent-glow) 0%,
+              transparent 65%
+            );
+            pointer-events: none;
+          "
+        ></div>
+        <div class="container" style="position: relative; z-index: 1">
+          <h2 class="section-title">
+            Ready to Begin<br /><em>Your Journey?</em>
+          </h2>
+          <div
+            style="
+              display: flex;
+              gap: var(--space-lg);
+              justify-content: center;
+              flex-wrap: wrap;
+              margin-top: var(--space-2xl);
+            "
+          >
+            <a href="/inventory" class="btn btn-primary btn-lg"
+              >Browse Collection</a
+            >
+            <a
+              href="https://wa.me/2347025007590"
+              target="_blank"
+              class="btn btn-whatsapp btn-lg"
+              >Chat on WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      style="
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border);
+        padding: var(--space-xl) 0;
+      "
+    >
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+          "
+        >
+          <span>© 2026 Still Autos Nigeria Ltd.</span
+          ><a href="/" style="color: var(--text-muted); text-decoration: none"
+            >← Back to Home</a
+          >
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- CTA -->
-  <section class="section" style="background:var(--bg-primary);text-align:center;position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--accent-glow) 0%,transparent 65%);pointer-events:none"></div>
-    <div class="container" style="position:relative;z-index:1">
-      <h2 class="section-title">Ready to Begin<br/><em>Your Journey?</em></h2>
-      <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap;margin-top:var(--space-2xl)">
-        <a href="/inventory" class="btn btn-primary btn-lg">Browse Collection</a>
-        <a href="https://wa.me/2348025007590" target="_blank" class="btn btn-whatsapp btn-lg">Chat on WhatsApp</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer style="background:var(--bg-secondary);border-top:1px solid var(--border);padding:var(--space-xl) 0">
-  <div class="container"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:0.78rem;color:var(--text-muted)"><span>© 2026 Still Autos Nigeria Ltd.</span><a href="/" style="color:var(--text-muted);text-decoration:none">← Back to Home</a></div></div>
-</footer>
-
-<script src="/js/app.js"></script>
-</body>
+    <script src="/js/app.js"></script>
+  </body>
 </html>
