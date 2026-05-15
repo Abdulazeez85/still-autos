@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Not Found — Still Autos</title>
+  <link rel="stylesheet" href="/css/variables.css"/>
+  <link rel="stylesheet" href="/css/navbar.css"/>
+  <style>
+    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
+    .error-code { font-family: var(--font-serif); font-size: 8rem; font-weight: 300; color: var(--border-strong); line-height: 1; margin-bottom: 1rem; }
+    .error-title { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; }
+    .error-sub { color: var(--text-muted); margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+<div>
+  <div class="error-code">404</div>
+  <h1 class="error-title">Page Not Found</h1>
+  <p class="error-sub">The page you're looking for doesn't exist or has been moved.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="/" class="btn btn-primary">Back to Home</a>
+    <a href="/inventory" class="btn btn-outline">Browse Inventory</a>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

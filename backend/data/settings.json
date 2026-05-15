@@ -1,0 +1,32 @@
+{
+  "dealership": {
+    "name": "Still Autos",
+    "tagline": "Refined. Rare. Relentless.",
+    "phone": "+234 801 234 5678",
+    "whatsapp": "+2348012345678",
+    "email": "info@stillautos.ng",
+    "address": "5 Bourdillon Road, Ikoyi, Lagos",
+    "hours": {
+      "weekdays": "8:00 AM – 6:00 PM",
+      "saturday": "9:00 AM – 4:00 PM",
+      "sunday": "By Appointment"
+    },
+    "social": {
+      "instagram": "@stillautos",
+      "facebook": "Still Autos Nigeria",
+      "youtube": "Still Autos"
+    }
+  },
+  "finance": {
+    "interest_rate_min": 18,
+    "interest_rate_max": 28,
+    "min_deposit_percent": 20,
+    "max_tenor_months": 60,
+    "banks": ["Access Bank", "GTBank", "Zenith Bank", "First Bank", "UBA", "Sterling Bank"]
+  },
+  "admin": {
+    "username": "admin",
+    "password": "stillautos2024",
+    "token_secret": "sa_luxury_secret_2024"
+  }
+}

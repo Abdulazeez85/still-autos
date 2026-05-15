@@ -1,0 +1,479 @@
+/* ============================================
+   STILL AUTOS — VEHICLE DETAIL PAGE (VDP)
+   ============================================ */
+
+.vdp-hero {
+  padding-top: var(--nav-height);
+  background: var(--bg-secondary);
+}
+
+/* ===== IMAGE GALLERY ===== */
+.vdp-gallery {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-sm);
+  height: 520px;
+}
+
+.gallery-main {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-tertiary);
+  cursor: zoom-in;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-main:hover img { transform: scale(1.02); }
+
+.gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  overflow-y: auto;
+}
+
+.gallery-thumb {
+  flex-shrink: 0;
+  height: calc((520px - 16px) / 3);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+  background: var(--bg-tertiary);
+}
+
+.gallery-thumb:first-child { border-radius: 0; }
+.gallery-thumb:last-child { border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: all var(--transition-fast);
+}
+
+.gallery-thumb.active {
+  border-color: var(--accent);
+}
+
+.gallery-thumb.active img,
+.gallery-thumb:hover img {
+  filter: brightness(1);
+}
+
+/* Gallery nav buttons */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+  width: 100%;
+  pointer-events: none;
+}
+
+.gallery-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.gallery-nav-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ===== VDP LAYOUT ===== */
+.vdp-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-3xl);
+  align-items: start;
+  padding-top: var(--space-3xl);
+}
+
+/* ===== VDP INFO ===== */
+.vdp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.vdp-breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.vdp-breadcrumb a:hover { color: var(--accent); }
+
+.vdp-breadcrumb span { color: var(--border-strong); }
+
+.vdp-make {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.vdp-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.vdp-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.vdp-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.vdp-meta-item svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+
+/* Key specs grid */
+.vdp-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.vdp-spec-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.vdp-spec-card:hover { border-color: var(--border-accent); }
+
+.vdp-spec-icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.vdp-spec-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.vdp-spec-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Description */
+.vdp-description {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2xl);
+  padding-left: var(--space-xl);
+  border-left: 2px solid var(--accent);
+}
+
+/* Features grid */
+.vdp-features-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.vdp-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.vdp-feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.vdp-feature-item:hover {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+.vdp-feature-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.vdp-feature-icon svg { width: 10px; height: 10px; }
+
+/* Full specs table */
+.vdp-specs-table {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-2xl);
+}
+
+.vdp-specs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.vdp-specs-row:last-child { border-bottom: none; }
+
+.vdp-specs-key {
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+}
+
+.vdp-specs-val {
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ===== VDP SIDEBAR ===== */
+.vdp-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-md));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.price-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.price-card-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.price-card-amount {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-sans);
+}
+
+.price-card-monthly {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.price-card-monthly strong { color: var(--text-secondary); }
+
+.price-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.contact-card-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Finance mini calc in sidebar */
+.mini-calc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.mini-calc-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.mini-calc-result {
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.mini-calc-monthly {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mini-calc-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ===== RELATED VEHICLES ===== */
+.related-section {
+  background: var(--bg-secondary);
+  padding: var(--space-4xl) 0;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 1200px) {
+  .vdp-gallery { grid-template-columns: 1fr; height: auto; }
+  .gallery-thumbs { flex-direction: row; height: 80px; overflow-x: auto; }
+  .gallery-thumb { width: 120px; height: 80px; flex-shrink: 0; border-radius: var(--radius-sm) !important; }
+  .gallery-main { height: 360px; border-radius: var(--radius-md); }
+}
+
+@media (max-width: 1024px) {
+  .vdp-layout { grid-template-columns: 1fr; }
+  .vdp-sidebar { position: static; }
+  .vdp-specs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .vdp-specs-grid { grid-template-columns: repeat(2, 1fr); }
+  .vdp-features-grid { grid-template-columns: 1fr; }
+}

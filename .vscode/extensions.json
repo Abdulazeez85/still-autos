@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ritwickdey.liveserver",
+    "rangav.vscode-thunder-client",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "naumovs.color-highlight",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-js-profile-flame",
+    "burkeholland.simple-react-snippets",
+    "eamodio.gitlens",
+    "GitHub.copilot",
+    "vunguyentuan.vscode-css-variables",
+    "pranaygp.vscode-css-peek",
+    "zignd.html-css-class-completion"
+  ]
+}

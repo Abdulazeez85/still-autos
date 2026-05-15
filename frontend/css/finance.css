@@ -1,0 +1,265 @@
+/* ============================================
+   STILL AUTOS — FINANCE CALCULATOR
+   ============================================ */
+
+.finance-page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.finance-hero {
+  background: var(--bg-secondary);
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.finance-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, var(--accent-glow) 0%, transparent 55%);
+}
+
+.calc-section {
+  padding: var(--space-4xl) 0;
+}
+
+.calc-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* Inputs panel */
+.calc-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+}
+
+.calc-panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.range-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.range-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.range-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.range-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 3px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+/* Results panel */
+.results-panel {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-md));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+}
+
+.result-main {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-xl);
+}
+
+.result-monthly-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.result-monthly-amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-sans);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.result-monthly-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.result-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+.breakdown-row:last-child { border-bottom: none; }
+
+.breakdown-label { color: var(--text-muted); }
+.breakdown-value { font-weight: 600; color: var(--text-primary); }
+.breakdown-row.total .breakdown-label,
+.breakdown-row.total .breakdown-value { color: var(--accent); font-weight: 700; }
+
+/* Donut chart visualization */
+.finance-chart {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.donut-chart {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.donut-chart svg {
+  transform: rotate(-90deg);
+}
+
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.donut-center-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.donut-center-label {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chart-legend {
+  display: flex;
+  gap: var(--space-xl);
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Partners */
+.banks-section {
+  background: var(--bg-secondary);
+  padding: var(--space-4xl) 0;
+  border-top: 1px solid var(--border);
+}
+
+.banks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.bank-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.bank-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.bank-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.bank-rate {
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .calc-layout { grid-template-columns: 1fr; }
+  .results-panel { position: static; }
+  .banks-grid { grid-template-columns: 1fr 1fr; }
+}
